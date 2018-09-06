@@ -34,27 +34,6 @@ def create_v_tunnel(game_map, y1, y2, x):
         game_map.transparent[x, y] = True
 
 def make_map(game_map, max_rooms, room_min_size, room_max_size, map_width, map_height, player):
-    # for x, y in game_map:
-    #     game_map.walkable[x, y] = True
-    #     game_map.transparent[x, y] = True
-    # game_map.walkable[30, 22] = False
-    # game_map.transparent[30, 22] = False
-    # game_map.walkable[31, 22] = False
-    # game_map.transparent[31, 22] = False
-    # game_map.walkable[32, 22] = False
-    # game_map.transparent[32, 22] = False
-    # game_map.walkable[32, 33] = False
-    # game_map.transparent[32, 33] = False
-    # game_map.walkable[32, 34] = False
-    # game_map.transparent[32, 34] = False
-    # Create two rooms for demonstration purposes
-    # room1 = Rect(20, 15, 10, 15)
-    # room2 = Rect(35, 15, 10, 15)
-
-    # create_room(game_map, room1)
-    # create_room(game_map, room2)
-    # create_h_tunnel(game_map, 25, 40, 23)
-    
     rooms = []
     num_rooms = 0
     
