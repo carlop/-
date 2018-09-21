@@ -16,7 +16,7 @@ def handle_player_turn_keys(user_input):
     # Movement keys
     if user_input.key == 'UP' or key_char == 'k':
         return {'move': (0, -1)}
-    elif user_input.key == 'DOWN' or key_char == 'k':
+    elif user_input.key == 'DOWN' or key_char == 'j':
         return {'move': (0, 1)}
     elif user_input.key == 'LEFT' or key_char == 'h':
         return {'move': (-1, 0)}
@@ -80,4 +80,3 @@ def handle_inventory_keys(user_input):
         return {'exit', True}
     
     return {}
-
