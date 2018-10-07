@@ -101,6 +101,8 @@ def handle_main_menu(user_input):
         elif key_char == 'c' or user_input.key == 'ESCAPE':
             return {'exit': True}
 
+    return {}
+
 def handle_mouse(mouse_event):
     if mouse_event:
         (x, y) = mouse_event.cell

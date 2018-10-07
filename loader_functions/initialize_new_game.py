@@ -93,6 +93,6 @@ def get_game_variables(constants):
 
     message_log = MessageLog(constants['message_x'], constants['message_width'], constants['message_height'])
 
-    game_state = GameStates.PLAYER_TURN
+    game_state = GameStates.PLAYERS_TURN
 
     return player, entities, game_map, message_log, game_state

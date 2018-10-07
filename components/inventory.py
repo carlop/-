@@ -5,7 +5,7 @@ class Inventory:
         self.capacity = capacity
         self.items = []
 
-    def add_items(self, item, colors):
+    def add_item(self, item, colors):
         results = []
 
         if len(self.items) >= self.capacity:

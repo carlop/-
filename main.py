@@ -25,13 +25,9 @@ def play_game(player, entities, game_map, message_log, game_state, root_console,
 
     while not tdl.event.is_window_closed():
         if fov_recompute:
-            game_map.compute_fov(player.x, player.y, fov=constants['fov_algorithm'], radius=constants['fov_radius'],
-                                light_walls=constants['fov_light_walls'])
+            game_map.compute_fov(player.x, player.y, fov=constants['fov_algorithm'], radius=constants['fov_radius'], light_walls=constants['fov_light_walls'])
 
-        render_all(con, panel, entities, player, game_map, fov_recompute, root_console, message_log,
-                constants['screen_width'], constants['screen_height'], constants['bar_width'],
-                constants['panel_height'], constants['panel_y'], mouse_coordinates, constants['colors'],
-                game_state)
+        render_all(con, panel, entities, player, game_map, fov_recompute, root_console, message_log, constants['screen_width'], constants['screen_height'], constants['bar_width'], constants['panel_height'], constants['panel_y'], mouse_coordinates, constants['colors'], game_state)
         tdl.flush()
 
         clear_all(con, entities)
@@ -106,13 +102,11 @@ def play_game(player, entities, game_map, message_log, game_state, root_console,
             previous_game_state = game_state
             game_state = GameStates.DROP_INVENTORY
 
-        if inventory_index is not None and previous_game_state != GameStates.PLAYER_DEAD and inventory_index < len(
-                player.inventory.items):
+        if inventory_index is not None and previous_game_state != GameStates.PLAYER_DEAD and inventory_index < len(player.inventory.items):
             item = player.inventory.items[inventory_index]
 
             if game_state == GameStates.SHOW_INVENTORY:
-                player_turn_results.extend(player.inventory.use(item, constants['colors'], entities=entities,
-                                                                game_map=game_map))
+                player_turn_results.extend(player.inventory.use(item, constants['colors'], entities=entities, game_map=game_map))
             elif game_state == GameStates.DROP_INVENTORY:
                 player_turn_results.extend(player.inventory.drop_item(item, constants['colors']))
 
@@ -120,8 +114,7 @@ def play_game(player, entities, game_map, message_log, game_state, root_console,
             if left_click:
                 target_x, target_y = left_click
 
-                item_use_results = player.inventory.use(targeting_item, constants['colors'], entities=entities,
-                                                        game_map=game_map, target_x=target_x, target_y=target_y)
+                item_use_results = player.inventory.use(targeting_item, constants['colors'], entities=entities, game_map=game_map, target_x=target_x, target_y=target_y)
                 player_turn_results.extend(item_use_results)
             elif right_click:
                 player_turn_results.append({'targeting_cancelled': True})
@@ -280,3 +273,6 @@ def main():
             play_game(player, entities, game_map, message_log, game_state, root_console, con, panel, constants)
 
             show_main_menu = True
+
+if __name__ == '__main__':
+    main()

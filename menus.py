@@ -48,7 +48,7 @@ def main_menu(con, root_console, background_image, screen_width, screen_height, 
     center = (screen_width - len(title)) // 2
     root_console.draw_str(center, screen_height // 2 - 4, title, bg=None, fg=colors.get('light_yellow'))
 
-    title = 'By Carlos López'
+    title = 'By Carlos Lopez'
     center = (screen_width - len(title)) // 2
     root_console.draw_str(center, screen_height - 2, title, bg=None, fg=colors.get('light_yellow'))
 
